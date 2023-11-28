@@ -3,9 +3,6 @@ class CategoriesController < ApplicationController
     @categories = current_user.categories
   end
 
-  def show
-  end
-
   def new
     @category = Category.new
   end
@@ -20,6 +17,12 @@ class CategoriesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @category = Category.find(params[:id])
+    @payments = @category.payments.order(created_at: :desc)
+    @sum = @payments.sum(:amount)
   end
 
   private

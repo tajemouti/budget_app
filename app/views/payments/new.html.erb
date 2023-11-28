@@ -1,2 +1,21 @@
-<h1>Payments#new</h1>
-<p>Find me in app/views/payments/new.html.erb</p>
+<div>
+  <%= form_with model: @payment, url: category_payments_path do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.label :amount %>
+      <%= form.number_field :amount %>
+    </div>
+    <div>
+      <%= form.label "Categories" %>
+      <%= form.collection_select(:category_ids, current_user.categories, :id, :name, {}, { multiple: true }) %>
+    </div>
+    <div>
+      <%= form.submit "Create transaction" %>
+    </div>
+  <% end %>
+
+  <%= link_to "Back", category_path(@category) %>
+</div>
