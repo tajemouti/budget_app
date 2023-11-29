@@ -21,7 +21,7 @@ RSpec.describe 'payments/new', type: :view do
       expect(rendered).to have_selector('label', text: 'Categories')
       expect(rendered).to have_selector('select[name="payment[category_ids][]"]')
 
-      expect(rendered).to have_selector('input[type="submit"][value="Create transaction"]')
+      expect(rendered).to have_selector('input[type="submit"][value="ADD TRANSACTION"]')
     end
   end
 end

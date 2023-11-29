@@ -3,26 +3,24 @@
     <%= link_to "<", category_path(@category) %>
   </div>
 
-	<div class="list">
-		<h2>New transaction</h2>
-	</div>
+	<h2 class="list blue">NEW TRANSACTION</h2>
     
-  <div>
+  <div class="sub-container">
     <%= form_with model: @payment, url: category_payments_path(@category) do |form| %>
       <div>
         <%= form.label :name %><br>
-        <%= form.text_field :name, class: "field" %>
+        <%= form.text_field :name, class: "field", required: true %>
       </div>
       <div>
         <%= form.label :amount %><br>
-        <%= form.number_field :amount, class: "field" %>
+        <%= form.number_field :amount, class: "field", required: true %>
       </div>
       <div>
         <%= form.label "Categories" %><br>
-        <%= form.collection_select(:category_ids, current_user.categories, :id, :name, {}, { multiple: true, class: "field" }) %>
+        <%= form.collection_select(:category_ids, current_user.categories, :id, :name, {}, { multiple: true, class: "field", required: true }) %>
       </div>
-      <div>
-        <%= form.submit "Create transaction", class: "add-new" %>
+      <div class="add-item">
+        <%= form.submit "ADD TRANSACTION", class: "add" %>
       </div>
     <% end %>
   </div>

@@ -7,10 +7,10 @@ RSpec.describe 'categories/index', type: :view do
   end
 
   it 'displays the page title' do
-    expect(rendered).to have_selector('h1', text: 'Categories')
+    expect(rendered).to have_selector('h1', text: 'CATEGORIES')
   end
 
-  it 'displays "Add new category" link' do
-    expect(rendered).to have_link('Add new category', href: new_category_path)
+  it 'displays "ADD A NEW CATEGORY" link' do
+    expect(rendered).to have_link('ADD A NEW CATEGORY', href: new_category_path)
   end
 end

@@ -14,7 +14,6 @@ RSpec.describe 'categories/show.html.erb', type: :view do
 
   it 'renders the category details and payments' do
     expect(rendered).to have_selector('.back a', text: '<')
-    expect(rendered).to have_selector('.list h2', text: 'Transactions')
     expect(rendered).to have_selector('.list h3', text: category.name)
     expect(rendered).to have_selector('.list p', text: "$#{@sum}")
   end

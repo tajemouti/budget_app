@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'splash/index', type: :view do
-  it 'displays the Budget App home page' do
+  it 'displays the Budget Wizard home page' do
     render
 
-    expect(rendered).to have_selector('h1', text: 'Budget App')
+    expect(rendered).to have_selector('h1', text: 'Budget Wizard')
 
     expect(rendered).to have_selector('div') do
       expect(rendered).to have_selector('div', text: 'Sign in') do

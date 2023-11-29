@@ -3,22 +3,20 @@
 		<%= link_to "<", categories_path %>
 	</div>
 
-	<div class="list">
-		<h2>New category</h2>
-	</div>
+	<h2 class="list blue">NEW CATEGORY</h2>
 
-  <div>
+  <div class="sub-container">
 		<%= form_with model: @category do |form| %>
     	<div>
       	<%= form.label :name %><br>
-      	<%= form.text_field :name, placeholder: "Category name", class: "field" %>
+      	<%= form.text_field :name, placeholder: "Category name", class: "field", required: true %>
     	</div>
     	<div>
       	<%= form.label :icon %><br>
-      	<%= form.text_field :icon, placeholder: "Icon link", class: "field" %>
+      	<%= form.text_field :icon, placeholder: "Icon link", class: "field", required: true %>
     	</div>
-			<div>
-    		<%= form.submit "Add category", class: "add-new" %>
+			<div class="add-item">
+    		<%= form.submit "ADD CATEGORY", class: "add" %>
 			</div>
   	<% end %>
 	</div>
