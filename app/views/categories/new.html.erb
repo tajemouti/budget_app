@@ -1,14 +1,25 @@
-<div>
-  <%= form_with model: @category do |form| %>
-    <div>
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
-    <div>
-      <%= form.label :icon %>
-      <%= form.text_field :icon, placeholder: "Icon link" %>
-    </div>
-    <%= form.submit %>
-  <% end %>
-  <%= link_to "Back", categories_path %>
+<div class="container">
+	<div class="back">
+		<%= link_to "<", categories_path %>
+	</div>
+
+	<div class="list">
+		<h2>New category</h2>
+	</div>
+
+  <div>
+		<%= form_with model: @category do |form| %>
+    	<div>
+      	<%= form.label :name %><br>
+      	<%= form.text_field :name, placeholder: "Category name", class: "field" %>
+    	</div>
+    	<div>
+      	<%= form.label :icon %><br>
+      	<%= form.text_field :icon, placeholder: "Icon link", class: "field" %>
+    	</div>
+			<div>
+    		<%= form.submit "Add category", class: "add-new" %>
+			</div>
+  	<% end %>
+	</div>
 </div>

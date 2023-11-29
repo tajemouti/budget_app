@@ -1,20 +1,25 @@
-<h1>Transactions</h1>
+<div class="container">
 
-<div>
-  <h2><%= @category.name %></h2>
-  <p>Total amount: $<%= @sum %></p>
-</div>
+  <div class="back">
+    <%= link_to "<", categories_path %>
+  </div>
 
-<div>
-  <% @payments.each do |payment| %>
-   <div>
-      <%= payment.name %>
-      <p>Amount: $<%= payment.amount %></p>
-    </div>
-  <% end %>
-</div>
+  <div class="list">
+    <h2>Transactions</h2>
+    <h3><%= @category.name %></h3>
+    <p>$<%= @sum %></p>
+  </div>
 
-<div>
-  <%= link_to "Add new transaction", new_category_payment_path(@category) %>
-  <%= link_to "Back", categories_path %>
+  <div >
+    <% @payments.each do |payment| %>
+      <div class="list">
+        <%= payment.name %>
+        <p>$<%= payment.amount %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="add-new">
+    <%= link_to "Add new transaction", new_category_payment_path(@category) %>
+  </div>
 </div>

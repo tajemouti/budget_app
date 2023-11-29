@@ -1,14 +1,24 @@
-<div>
+<div class="container">
   <h1>Categories</h1>
 
   <div>
     <% @categories.each do |category| %>
-      <div>
-        <%= image_tag(category.icon, alt: "Category icon") %>
-        <%= link_to category.name, category_path(category) %>
-        <p>Total amount $<%= category.payments.sum(:amount) %></p>
+      <div class="list">
+				<div class="item">
+        	<%= image_tag(category.icon, alt: "Category icon") %>
+				</div>
+				<div class="item">
+        	<%= link_to category.name, category_path(category) %>
+				</div>
+				<div class="item">
+        	$<%= category.payments.sum(:amount) %>
+				</div>
       </div>
     <% end %>
   </div>
-  <%= link_to "Add new category", new_category_path %>
+	<div>
+		<div class="add-new">
+  		<%= link_to "Add new category", new_category_path %>
+		</div>	
+	</div>
 </div>
