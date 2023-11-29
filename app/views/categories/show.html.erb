@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="back">
+    <%= link_to "<", categories_path %>
+  </div>
+
+  <h2 class="list blue">TRANSACTIONS</h2>
+
+  <div class="list">
+    <h3><%= @category.name %></h3>
+    <p class="amount">$<%= @sum %></p>
+  </div>
+
+  <div class="sub-container">
+    <% @payments.each do |payment| %>
+      <div class="list">
+        <p class="category"><%= payment.name %></p>
+        <p class="amount">$<%= payment.amount %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="add-new">
+    <%= link_to "ADD A NEW TRANSACTION", new_category_payment_path(@category) %>
+  </div>
+</div>
