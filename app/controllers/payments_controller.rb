@@ -13,7 +13,7 @@ class PaymentsController < ApplicationController
       flash[:notice] = 'Transaction successfully created.'
       redirect_to @category
     else
-      render :new, status: :unprocessable_entity  
+      render :new, status: :unprocessable_entity
     end
   end
 
