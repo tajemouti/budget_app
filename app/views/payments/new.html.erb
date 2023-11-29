@@ -8,7 +8,7 @@
 	</div>
     
   <div>
-    <%= form_with model: @payment, url: category_payments_path do |form| %>
+    <%= form_with model: @payment, url: category_payments_path(@category) do |form| %>
       <div>
         <%= form.label :name %><br>
         <%= form.text_field :name, class: "field" %>
