@@ -42,7 +42,7 @@ Ruby on Rails, Visual Studia Code, WSL
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://tajemouti-budget-wizard.onrender.com/)
+- [Live Demo Link](https://budget-wizard-app.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
